@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>banner2</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script src="../jquery.custom.js"></script>
+<script src="../jquery.banner.js"></script>
+<style type="text/css">
+    body{margin: 0;}
+    #banner{ width: 670px; height: 240px; overflow: hidden; position: relative; float: left;}
+    .banner-left,.banner-right{display:block; display: none; width:33px;height:54px;
+        position:absolute;top:50%;margin-top:-27px;z-index:21;
+        background-image: url(http://img.lamahui.com/biz/home/banner-btn.png);
+        background-repeat: no-repeat;
+    }
+    .banner-right{right:0; background-position: right 0;}
+    .banner-left{left:0;}
+    .banner-dotwrap i{display:inline-block;width:20px;height:20px;line-height:20px;color:#fff;border-radius:50%;background:#6a757f;position:relative;top:-31px;font-style:normal;cursor:pointer;margin:0 4px;text-align:center;font-size:14px;}
+    .banner-dotwrap i.curr{background:#ea9acd;color:#fff;}
+    .banner-dotwrap{position:absolute;text-align:center;bottom:0;left:0;width:100%;z-index:21;height:1px;text-align:center;}
+    .banner-item{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;overflow:hidden;}
+    .banner-item img{position:relative; width: 670px; height: 240px;}
+    .banner-item-first{z-index:2;}
+</style>
+</head>
+<body>
+<div id="banner"></div>
+<script>
+
+/*
+   作者：本相 9169775@qq.com
+   插件介绍：banner插件，默认只加载第一张图片，过两秒后加载另外的图片，让首屏加载更快。
+*/
+
+$('#banner').banner({
+    data : [{
+            img : 'http://img.lamahui.com/biz/home/ban01.gif'
+        },{
+            img : 'http://img.lamahui.com/biz/home/ban02.jpg',
+            url : 'http://www.wdgj.com/product-wdgjcloud.html'
+        }],                   //值可以传为数组
+    css : '',                 //css
+    width : 670,              //默认为100%
+    height : 240,             //默认为250px
+    auto : true,              //是否自动播放
+    autotime : 3000,          //自动播放间隔
+    effect : 1,               //特效类型 0：渐变；1：左右;
+    efftime : 200,            //渐变时间
+    // hideDot : true,        //隐藏小圆点传ture， 不传显示
+    // hideBtn : true,        //隐藏按钮传ture, 不传显示
+    // lazytime : 'scroll'    //延时加载时间
+});
+</script>
+</body>
+</html>
